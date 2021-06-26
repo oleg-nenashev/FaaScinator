@@ -13,6 +13,7 @@
   <version>1.0-alpha-1-SNAPSHOT</version>
   <name>FaaScinator BOM</name>
   <description>FaaScinator Service</description>
+  <url>https://github.com/oleg-nenashev/FaaScinator</url>
 
   <dependencyManagement>
     <dependencies>

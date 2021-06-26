@@ -10,12 +10,13 @@
 
   <groupId>io.faascinator</groupId>
   <artifactId>faascinator-parent</artifactId>
+  <version>1.0-alpha-1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>FaaScinator Parent POM</name>
   <description>Parent POM for FaaScinator components</description>
-  <version>1.0-alpha-1-SNAPSHOT</version>
-
+  <url>https://github.com/oleg-nenashev/FaaScinator</url>
+  
   <licenses>
     <license>
       <name>Apache License Version 2.0</name>
