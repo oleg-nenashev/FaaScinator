@@ -1,13 +1,12 @@
 ##
 # Builder image
 ##
-FROM maven/3.8.1-adoptopenjdk-11 as builder
+FROM maven:3.8.1-adoptopenjdk-11 as builder
 
 RUN mkdir /app
 WORKDIR /app
-ADD * /app/
-ADD .mvn /app/.mvn/
-RUN mvn clean package -b
+ADD . /app/
+RUN mvn clean package
 
 ##
 # use the openfaas image to get the watchdog
@@ -17,13 +16,13 @@ FROM openfaas/of-watchdog:0.7.6 as watchdog
 ##
 # Create new image
 ##
-FROM adoptopenjdk:11.0.8_10-jdk-hotspot
+FROM adoptopenjdk:11.0.11_9-jdk-hotspot
 
-COPY --from=builder /app/function/target/*-runner /function
+COPY --from=builder /app/function/2_lib/target/quarkus-app/* /function
 COPY --from=watchdog /fwatchdog /fwatchdog
 
 ENV cgi_headers="true"
-ENV fprocess="/function"
+ENV fprocess="java -jar /function/quarkus-run.jar"
 ENV mode="http"
 ENV upstream_url="http://127.0.0.1:8000"
 

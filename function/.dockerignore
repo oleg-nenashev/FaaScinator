@@ -1,1 +1,8 @@
+Dockerfile
+
+# Maven
 **/target/
+integration-test
+
+# IDEA
+*.iml
