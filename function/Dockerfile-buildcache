@@ -1,0 +1,9 @@
+##
+# Builder image
+##
+FROM maven:3.8.1-adoptopenjdk-11
+
+RUN mkdir /app-buildcache
+WORKDIR /app-buildcache
+ADD . /app-buildcache/
+RUN mvn clean package

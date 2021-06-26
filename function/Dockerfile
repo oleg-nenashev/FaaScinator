@@ -1,7 +1,7 @@
 ##
 # Builder image
 ##
-FROM maven:3.8.1-adoptopenjdk-11 as builder
+FROM onenashev/faascinator:buildcache as builder
 
 RUN mkdir /app
 WORKDIR /app
