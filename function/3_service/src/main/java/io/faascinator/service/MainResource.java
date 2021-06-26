@@ -1,4 +1,4 @@
-package io.faascinator.lib;
+package io.faascinator.service;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

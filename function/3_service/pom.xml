@@ -8,11 +8,11 @@
     <relativePath>../pom.xml</relativePath>
   </parent>
 
-  <artifactId>faascinator-lib</artifactId>
+  <artifactId>faascinator-service</artifactId>
   <packaging>jar</packaging>
   <version>1.0-alpha-1-SNAPSHOT</version>
   <name>FaaScinator BOM</name>
-  <description>FaaScinator Library</description>
+  <description>FaaScinator Service</description>
 
   <dependencyManagement>
     <dependencies>
