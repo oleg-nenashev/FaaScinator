@@ -45,6 +45,13 @@
       <artifactId>rest-assured</artifactId>
       <scope>test</scope>
     </dependency>
+
+    <!-- TODO: Remove once proper loading is supported -->
+    <dependency>
+      <groupId>io.faascinator.demo</groupId>
+      <artifactId>demo-picocli-checksum</artifactId>
+      <version>1.0-alpha-1-SNAPSHOT</version>
+    </dependency>
   </dependencies>
 
   <build>

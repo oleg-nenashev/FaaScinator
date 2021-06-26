@@ -8,11 +8,12 @@
     <relativePath>../pom.xml</relativePath>
   </parent>
 
-  <artifactId>demo-cli-tool</artifactId>
+  <groupId>io.faascinator.demo</groupId>
+  <artifactId>demo-picocli-checksum</artifactId>
   <packaging>jar</packaging>
   <version>1.0-alpha-1-SNAPSHOT</version>
   <name>Demo CLI tool: picocli</name>
-  <description>Demo CLI Tool for FaaScinator, powered by picocli</description>
+  <description>Demo CLI Tool for FaaScinator, counting checksums. Powered by picocli</description>
 
   <properties>
     <appName>demo-picocli</appName>
