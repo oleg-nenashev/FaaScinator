@@ -14,6 +14,12 @@
   <name>Demo CLI tool: picocli</name>
   <description>Demo CLI Tool for FaaScinator, powered by picocli</description>
 
+  <properties>
+    <appName>demo-picocli</appName>
+    <mainClass>io.faascinator.demo.picocli.CheckSum</mainClass>
+    <skip.assembly>false</skip.assembly>
+  </properties>
+
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -66,6 +72,32 @@
             </manifest>
           </archive>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>make-assembly</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <descriptorRefs>
+                <descriptorRef>jar-with-dependencies</descriptorRef>
+              </descriptorRefs>
+              <archive>
+                <manifest>
+                  <addClasspath>true</addClasspath>
+                  <mainClass>${mainClass}</mainClass>
+                </manifest>
+              </archive>
+              <finalName>${appName}</finalName>
+              <appendAssemblyId>false</appendAssemblyId>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
