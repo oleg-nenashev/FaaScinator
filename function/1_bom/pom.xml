@@ -1,0 +1,38 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>io.faascinator</groupId>
+    <artifactId>faascinator-parent</artifactId>
+    <version>1.0-alpha-1-SNAPSHOT</version>
+    <relativePath>../pom.xml</relativePath>
+  </parent>
+
+  <artifactId>faascinator-bom</artifactId>
+  <packaging>pom</packaging>
+  <name>FaaScinator BOM</name>
+  <description>Provides Bill of Materials with FaaScinator dependencies</description>
+  <version>1.0-alpha-1-SNAPSHOT</version>
+
+  <properties>
+
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>io.quarkus</groupId>
+        <artifactId>quarkus-bom</artifactId>
+        <version>${quarkus.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>info.picocli</groupId>
+        <artifactId>picocli</artifactId>
+        <version>4.6.1</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+</project>
