@@ -27,7 +27,7 @@
   <modules>
     <module>1_bom</module>
     <module>2_lib</module>
-    <module>3_cli</module>
+    <module>3_demo-picocli</module>
   </modules>
 
   <properties>
