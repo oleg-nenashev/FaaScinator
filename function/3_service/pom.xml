@@ -1,32 +1,35 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
-
   <parent>
     <groupId>io.faascinator</groupId>
     <artifactId>faascinator-parent</artifactId>
     <version>1.0-alpha-1-SNAPSHOT</version>
-    <relativePath>../pom.xml</relativePath>
   </parent>
-
   <artifactId>faascinator-service</artifactId>
-  <packaging>jar</packaging>
   <version>1.0-alpha-1-SNAPSHOT</version>
   <name>FaaScinator BOM</name>
   <description>FaaScinator Service</description>
   <url>https://github.com/oleg-nenashev/FaaScinator</url>
-
   <dependencyManagement>
     <dependencies>
       <dependency>
         <groupId>io.faascinator</groupId>
         <artifactId>faascinator-bom</artifactId>
         <version>${project.version}</version>
-        <scope>import</scope>
         <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>io.quarkus</groupId>
+        <artifactId>quarkus-bom</artifactId>
+        <version>1.13.0.Final</version>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
     </dependencies>
   </dependencyManagement>
-
   <dependencies>
     <dependency>
       <groupId>info.picocli</groupId>
@@ -46,15 +49,16 @@
       <artifactId>rest-assured</artifactId>
       <scope>test</scope>
     </dependency>
-
-    <!-- TODO: Remove once proper loading is supported -->
     <dependency>
       <groupId>io.faascinator.demo</groupId>
       <artifactId>demo-picocli-checksum</artifactId>
       <version>1.0-alpha-1-SNAPSHOT</version>
     </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-config-yaml</artifactId>
+    </dependency>
   </dependencies>
-
   <build>
     <plugins>
       <plugin>

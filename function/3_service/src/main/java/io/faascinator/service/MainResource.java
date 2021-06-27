@@ -5,6 +5,7 @@ import io.faascinator.service.util.FunctionConfig;
 import io.faascinator.service.util.PicocliExtractor;
 import picocli.CommandLine;
 
+import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -18,6 +19,9 @@ import java.nio.charset.StandardCharsets;
 @Produces(MediaType.TEXT_PLAIN)
 public class MainResource {
 
+    @Inject
+    FunctionConfig config;
+
     //TODO: fix it
     @SuppressFBWarnings(value = "DM_DEFAULT_ENCODING", justification = "hack")
     @GET
@@ -27,7 +31,7 @@ public class MainResource {
         PrintStream pstream = new PrintStream(ostream);
         System.setOut(pstream);
         System.setErr(pstream);
-        final CommandLine cmd = PicocliExtractor.extractCommandLine(FunctionConfig.DEMO_PICOCLI_CHECKSUM);
+        final CommandLine cmd = PicocliExtractor.extractCommandLine(config);
         cmd.execute();
         return new String(ostream.toByteArray(), StandardCharsets.UTF_8.name());
     }
