@@ -36,7 +36,7 @@ It allows passing external CLI JAR and settings via
 The following command will start the service on port 8080:
 
 ```bash
-	java \
+java \
      -Dfaascinator.descriptiom="Snows the current time" \
      -Dfaascinator.mainClass="io.faascinator.demo.currenttime.CurrentTime" \
      -Dfaascinator.cliJar="demo/currentTime/cli-app/target/demo-current-time.jar" \
