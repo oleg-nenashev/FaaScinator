@@ -27,6 +27,7 @@ public class MainResource extends FaaScinatorResource {
         System.setOut(pstream);
         System.setErr(pstream);
         final CommandLine cmd = PicocliExtractor.extractCommandLine(config);
+        cmd.setColorScheme(new CommandLine.Help.ColorScheme.Builder().ansi(CommandLine.Help.Ansi.OFF).build());
         cmd.execute();
         return new String(ostream.toByteArray(), StandardCharsets.UTF_8.name());
     }

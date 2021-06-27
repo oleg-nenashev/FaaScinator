@@ -1,11 +1,13 @@
 package io.faascinator.service;
 
 /**
+ * Prints help for the method
  * @author Oleg Nenashev
  * @since TODO
  */
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import io.faascinator.service.util.PicocliExtractor;
+import picocli.CommandLine;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -38,7 +40,7 @@ public class HelpResource extends FaaScinatorResource {
 
         // PicoCLI help
         ByteArrayOutputStream wr = new ByteArrayOutputStream();
-        PicocliExtractor.extractCommandLine(config).usage(new PrintWriter(wr));
+        PicocliExtractor.extractCommandLine(config).usage(new PrintWriter(wr), CommandLine.Help.Ansi.OFF);
         response.append(wr.toString(StandardCharsets.UTF_8.name()));
 
         return response.toString();
