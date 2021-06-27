@@ -19,7 +19,7 @@ FROM openfaas/of-watchdog:0.7.6 as watchdog
 ##
 FROM adoptopenjdk:11.0.11_9-jdk-hotspot
 
-COPY --from=builder /app/2_lib/target/quarkus-app/ /function
+COPY --from=builder /app/3_lib/target/quarkus-app/ /function
 ENV QUARKUS_HTTP_PORT=9090
 
 COPY --from=watchdog /fwatchdog /fwatchdog

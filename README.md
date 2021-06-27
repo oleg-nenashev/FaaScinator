@@ -48,7 +48,17 @@ See the demo [here](./demo/currentTime).
 
 ### Running in Docker
 
-Coming soon!
+The Docker image needs to be built first.
+To launch the Docker Image with an arbitrary JAR, use the following command:
+
+```
+docker --rm -p 8080:8080 \
+   -v $(pwd)/demo/currentTime/cli-app/target/demo-current-time.jar:/app/payload.jar \
+   -e QUARKUS_FAASCINATOR_DESCRIPTION="Shows the current time" \
+   -e QUARKUS_FAASCINATOR_CLIJAR=/app/payload.jar \
+   -e QUARKUS_FAASCINATOR_MAINCLASS="io.faascinator.demo.currenttime.CurrentTime" \
+   onenashev/faascinator
+```
 
 ### Running in OpenFaaS
 

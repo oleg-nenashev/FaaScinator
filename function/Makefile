@@ -4,7 +4,7 @@
 
 .PHONY: run
 run:
-	docker run -p 8080:8080 onenashev/faascinator
+	docker run --rn -p 8080:8080 onenashev/faascinator
 
 .PHONY: build
 build:
