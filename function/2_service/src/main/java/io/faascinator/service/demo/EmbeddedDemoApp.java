@@ -13,7 +13,8 @@ import java.security.MessageDigest;
 import java.util.concurrent.Callable;
 
 @Command(name = "checksum", mixinStandardHelpOptions = true, version = "checksum 4.0",
-        description = "Prints the checksum (MD5 by default) of a specified string to STDOUT.")
+        description = "Prints the checksum (MD5 by default) of a specified string to STDOUT.",
+        addMethodSubcommands = true, subcommands = { CommandLine.HelpCommand.class })
 public class EmbeddedDemoApp implements Callable<Integer> {
 
     @Parameters(index = "0", description = "The string whose checksum to calculate.")
