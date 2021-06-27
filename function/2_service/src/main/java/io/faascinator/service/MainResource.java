@@ -20,7 +20,7 @@ import java.nio.charset.StandardCharsets;
 public class MainResource {
 
     @Inject
-    FunctionConfig config;
+    public FunctionConfig config;
 
     //TODO: fix it
     @SuppressFBWarnings(value = "DM_DEFAULT_ENCODING", justification = "hack")

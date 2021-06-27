@@ -23,7 +23,7 @@ import java.util.Optional;
 public class HelpResource {
 
     @Inject
-    FunctionConfig config;
+    public FunctionConfig config;
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)

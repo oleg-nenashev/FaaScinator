@@ -27,8 +27,8 @@
 
   <modules>
     <module>1_bom</module>
-    <module>2_demo-picocli</module>
-    <module>3_service</module>
+    <module>2_service</module>
+    <module>3_demo-picocli</module>
   </modules>
 
   <properties>
@@ -66,8 +66,11 @@
     <profile>
       <!-- Integration tests -->
       <id>run-its</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
       <modules>
-        <module>integration-test</module>
+        <module>9_integration-test</module>
       </modules>
     </profile>
     <profile>

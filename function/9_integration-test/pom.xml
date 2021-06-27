@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>io.faascinator</groupId>
+    <artifactId>faascinator-parent</artifactId>
+    <version>1.0-alpha-1-SNAPSHOT</version>
+  </parent>
+
+  <groupId>io.faascinator.test</groupId>
+  <artifactId>integration-test</artifactId>
+  <version>1.0-alpha-1-SNAPSHOT</version>
+  <name>FaaScinator BOM</name>
+  <description>FaaScinator Service</description>
+  <url>https://github.com/oleg-nenashev/FaaScinator</url>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>io.faascinator</groupId>
+        <artifactId>faascinator-bom</artifactId>
+        <version>${project.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>io.quarkus</groupId>
+        <artifactId>quarkus-bom</artifactId>
+        <version>1.13.0.Final</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+    <dependency>
+      <groupId>io.faascinator</groupId>
+      <artifactId>faascinator-service</artifactId>
+      <version>1.0-alpha-1-SNAPSHOT</version>
+    </dependency>
+
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-junit5</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.rest-assured</groupId>
+      <artifactId>rest-assured</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>io.quarkus</groupId>
+        <artifactId>quarkus-maven-plugin</artifactId>
+        <version>${quarkus.version}</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>build</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
