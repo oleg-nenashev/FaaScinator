@@ -9,6 +9,6 @@ run-local:
 	java \
 	  -Dfaascinator.mainClass="io.faascinator.demo.currenttime.CurrentTime" \
 	  -Dfaascinator.cliJar="cli-app/target/demo-current-time.jar" \
-	  -jar ../../function/2_service/target/quarkus-app/quarkus-run.jar
+	  -jar ../../function/3_service/target/quarkus-app/quarkus-run.jar
 
 #TODO: Add Docker run
