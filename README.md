@@ -41,11 +41,11 @@ Coming soon!
 
 ## Design
 
-This is how the initial design looks like.
-And yes, it was drawn on a napkin during the lunch break!
+This is how the FaaScinator design looks like.
+And yes, it was initially drawn on a napkin during the lunch break!
 [Proof in Twitter](https://twitter.com/oleg_nenashev/status/1408776830363082758).
 
-![Napkin design](/docs/images/first-napkin-design.jpg)
+![FaaScinator design](/docs/images/faascinator-design.png)
 
 ## License
 
