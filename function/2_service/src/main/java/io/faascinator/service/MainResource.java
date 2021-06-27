@@ -17,6 +17,7 @@ import java.nio.charset.StandardCharsets;
 @Produces(MediaType.TEXT_PLAIN)
 public class MainResource extends FaaScinatorResource {
 
+    //TODO: support subcommands
     //TODO: fix it
     @SuppressFBWarnings(value = "DM_DEFAULT_ENCODING", justification = "hack")
     @GET
