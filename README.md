@@ -37,11 +37,14 @@ The following command will start the service on port 8080:
 
 ```bash
 	java \
-	  -Dfaascinator.descriptiom="Snows the current time" \
+     -Dfaascinator.descriptiom="Snows the current time" \
      -Dfaascinator.mainClass="io.faascinator.demo.currenttime.CurrentTime" \
-	  -Dfaascinator.cliJar="cli-app/target/demo-current-time.jar" \
-	  -jar ../../function/2_service/target/quarkus-app/quarkus-run.jar
+     -Dfaascinator.cliJar="demo/currentTime/cli-app/target/demo-current-time.jar" \
+     -jar function/2_service/target/quarkus-app/quarkus-run.jar
+     Europe/Zurich
 ```
+
+See the demo [here](./demo/currentTime).
 
 ### Running in Docker
 
