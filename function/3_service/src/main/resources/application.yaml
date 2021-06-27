@@ -1,3 +1,3 @@
 # Placeholder, uses defaults
 faascinator:
-  description: "Just a demo configuration for tests"
+  description: "Demo demonstrating usage of FaaScinator with embedded CLI app (CheckSum calculator)"

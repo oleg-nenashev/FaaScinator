@@ -12,6 +12,8 @@
   <name>FaaScinator BOM</name>
   <description>FaaScinator Service</description>
   <url>https://github.com/oleg-nenashev/FaaScinator</url>
+
+
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -50,13 +52,12 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>io.faascinator.demo</groupId>
-      <artifactId>demo-picocli-checksum</artifactId>
-      <version>1.0-alpha-1-SNAPSHOT</version>
-    </dependency>
-    <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-config-yaml</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.github.spotbugs</groupId>
+      <artifactId>spotbugs-annotations</artifactId>
     </dependency>
   </dependencies>
   <build>

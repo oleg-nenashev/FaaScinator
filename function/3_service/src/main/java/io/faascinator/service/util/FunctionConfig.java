@@ -5,7 +5,7 @@ import io.quarkus.arc.config.ConfigProperties;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 
 import javax.validation.constraints.Size;
-import java.io.File;
+import io.faascinator.service.demo.EmbeddedDemoApp;
 
 /**
  * Stores configuration of the FaaS function
@@ -15,7 +15,7 @@ import java.io.File;
 @ConfigProperties(prefix = "faascinator")
 public class FunctionConfig {
 
-    public static final String DEFAULT_CLI_APP_CLASS = "io.faascinator.demo.picocli.CheckSum";
+    public static final String DEFAULT_CLI_APP_CLASS = EmbeddedDemoApp.class.getName();
     public static final String DEFAULT_CLI_JAR_PATH = "!";
     public static final FunctionConfig DEMO_PICOCLI_CHECKSUM =
             new FunctionConfig(DEFAULT_CLI_APP_CLASS,null);
