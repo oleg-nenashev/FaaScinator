@@ -27,8 +27,29 @@ just a developer mode for now.
 
 ## Usage
 
+### Running in CLI
+
+FaaScinator can be launched as a standard Quarkus service.
+It allows passing external CLI JAR and settings via
+[Quarkus configuration sources](https://quarkus.io/guides/config-reference#configuration_sources).
+
+The following command will start the service on port 8080:
+
+```bash
+	java \
+	  -Dfaascinator.descriptiom="Snows the current time" \
+     -Dfaascinator.mainClass="io.faascinator.demo.currenttime.CurrentTime" \
+	  -Dfaascinator.cliJar="cli-app/target/demo-current-time.jar" \
+	  -jar ../../function/2_service/target/quarkus-app/quarkus-run.jar
+```
+
+### Running in Docker
+
 Coming soon!
-Packaging of arbitrary CLI JARs is yet to be implemented, hence just a demo.
+
+### Running in OpenFaaS
+
+Coming soon!
 
 ## Planned features
 
