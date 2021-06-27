@@ -5,10 +5,8 @@ package io.faascinator.service;
  * @since TODO
  */
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
-import io.faascinator.service.util.FunctionConfig;
 import io.faascinator.service.util.PicocliExtractor;
 
-import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -20,10 +18,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Optional;
 
 @Path("/help")
-public class HelpResource {
-
-    @Inject
-    public FunctionConfig config;
+public class HelpResource extends FaaScinatorResource {
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
