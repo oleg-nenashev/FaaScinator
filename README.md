@@ -3,10 +3,10 @@
 [![GitHub Release](https://img.shields.io/github/release/oleg-nenashev/faascinator.svg)](https://github.com/oleg-nenashev//faascinator/releases) 
 [![Follow @oleg-nenashev](https://img.shields.io/twitter/follow/oleg_nenashev.svg?style=social)](https://twitter.com/intent/follow?screen_name=oleg_nenashev) 
 
-# FaaScinator (preview)
+# FaaScinator - Java CLI Apps as serverless functions (preview)
 
-Converts Java CLI apps into FaaS and [OpenFaaS](https://www.openfaas.com/) functions, 
-powered by [Quarkus](https://quarkus.io/) and [picocli](https://picocli.info/) .
+Converts Java CLI apps into serverless [OpenFaaS](https://www.openfaas.com/) functions, 
+powered by [Quarkus](https://quarkus.io/), [picocli](https://picocli.info/), [Docker](https://www.docker.com/) and [Adoptium JDK](https://adoptium.net/).
 This project is under active development (and may not work).
 Feedback is welcome!
 
@@ -28,16 +28,17 @@ just a developer mode for now.
 ## Usage
 
 Coming soon!
+Packaging of arbitrary CLI JARs is yet to be implemented, hence just a demo.
 
 ## Planned features
 
-* Deeper integration with [Quarkus](https://quarkus.io/)
-* Serverless template for [OpenFaaS](https://www.openfaas.com/) 
-* Support for setting system properties and environment variables via requests
-* Conversion of [picocli](https://picocli.info/) to JSON schema for the invocation interface
-* Support for Java 17
-* Future: support for [args4j](https://github.com/kohsuke/args4j) as a CLI provider
-* Future: support for packaging as a native executable
+* Deeper integration with [Quarkus](https://quarkus.io/) via extensions.
+* Serverless template for [OpenFaaS](https://www.openfaas.com/).
+* Support for setting system properties and environment variables via requests.
+* Conversion of [picocli](https://picocli.info/) to JSON schema for the invocation interface.
+* Support for Java 17 and, unlikely, for Java 1.8.
+* Future: support for [kohsuke/args4j](https://github.com/kohsuke/args4j) as a CLI provider.
+* Future: support for packaging as a native executable with GraalVM.
 
 ## Design
 
