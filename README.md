@@ -1,4 +1,4 @@
-![Napkin design](/docs/images/repo-header.png)
+<p align="center"><img src="docs/images/repo-header.png" alt="FaaScinator"></p>
 
 [![GitHub Release](https://img.shields.io/github/release/oleg-nenashev/faascinator.svg)](https://github.com/oleg-nenashev//faascinator/releases) 
 [![Follow @oleg-nenashev](https://img.shields.io/twitter/follow/oleg_nenashev.svg?style=social)](https://twitter.com/intent/follow?screen_name=oleg_nenashev) 
