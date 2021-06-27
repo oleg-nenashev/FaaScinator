@@ -48,6 +48,7 @@ public class MainResource extends FaaScinatorResource {
         if (subcommand != null) {
             cmd = rootCommand.getSubcommands().get(subcommand);
             if (cmd == null) {
+                // TODO: properly return errors
                 throw new IOException("Unsupported subcommand: " + subcommand + ". " +
                         "Supported commands: " + StringUtil.join(", ", rootCommand.getSubcommands().keySet().iterator()));
             }
