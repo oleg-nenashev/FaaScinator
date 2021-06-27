@@ -11,8 +11,8 @@
   <groupId>io.faascinator.test</groupId>
   <artifactId>integration-test</artifactId>
   <version>1.0-alpha-1-SNAPSHOT</version>
-  <name>FaaScinator BOM</name>
-  <description>FaaScinator Service</description>
+  <name>FaaScinator - Integration Tests</name>
+  <description>FaaScinator Integration Tests</description>
   <url>https://github.com/oleg-nenashev/FaaScinator</url>
 
   <dependencyManagement>

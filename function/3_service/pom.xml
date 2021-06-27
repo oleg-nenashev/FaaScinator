@@ -9,7 +9,7 @@
   </parent>
   <artifactId>faascinator-service</artifactId>
   <version>1.0-alpha-1-SNAPSHOT</version>
-  <name>FaaScinator Service</name>
+  <name>FaaScinator - Service</name>
   <description>FaaScinator Service that wraps CLI App and exposes it via REST APi endpoints</description>
   <url>https://github.com/oleg-nenashev/FaaScinator</url>
 
@@ -29,6 +29,11 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
+      <dependency>
+        <groupId>io.faascinator.quarkus.extension</groupId>
+        <artifactId>faascinator</artifactId>
+        <version>1.0-alpha-1-SNAPSHOT</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 
@@ -44,6 +49,10 @@
     <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-config-yaml</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.faascinator.quarkus.extension</groupId>
+      <artifactId>faascinator</artifactId>
     </dependency>
     <dependency>
       <groupId>com.github.spotbugs</groupId>

@@ -1,5 +1,6 @@
 # Placeholder, uses defaults
-faascinator:
-  description: "Demonstrates usage of FaaScinator with external CLI App JAR (CheckSum calculator)"
-  mainClass: "io.faascinator.demo.picocli.CheckSum"
-  cliJar: "../8_demo_picocli/target/demo-picocli.jar"
+quarkus:
+  faascinator:
+    description: "Demonstrates usage of FaaScinator with external CLI App JAR (CheckSum calculator)"
+    mainClass: "io.faascinator.demo.picocli.CheckSum"
+    cliJar: "../8_demo-picocli/target/demo-picocli.jar"

@@ -27,7 +27,7 @@
 
   <modules>
     <module>1_bom</module>
-    <!-- <module>2_extension</module> -->
+    <module>2_extension</module>
     <module>3_service</module>
     <module>8_demo-picocli</module>
   </modules>

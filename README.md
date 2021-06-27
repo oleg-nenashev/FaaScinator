@@ -37,9 +37,9 @@ The following command will start the service on port 8080:
 
 ```bash
 java \
-     -Dfaascinator.description="Shows the current time" \
-     -Dfaascinator.mainClass="io.faascinator.demo.currenttime.CurrentTime" \
-     -Dfaascinator.cliJar="demo/currentTime/cli-app/target/demo-current-time.jar" \
+     -Dquarkus.faascinator.description="Shows the current time" \
+     -Dquarkus.faascinator.mainClass="io.faascinator.demo.currenttime.CurrentTime" \
+     -Dquarkus.faascinator.cliJar="demo/currentTime/cli-app/target/demo-current-time.jar" \
      -jar function/2_service/target/quarkus-app/quarkus-run.jar \
      Europe/Zurich
 ```
