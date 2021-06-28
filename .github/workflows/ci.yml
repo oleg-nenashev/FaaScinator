@@ -2,7 +2,6 @@
 # For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
 
 name: Continuous Integration
-
 on:
   push:
     branches: [ main ]
@@ -10,10 +9,8 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
-
+  build-maven:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 11
@@ -24,3 +21,20 @@ jobs:
     - name: Build with Maven
       working-directory: ./function
       run: mvn -B package --file pom.xml
+  
+  build-docker:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Extract metadata (tags, labels) for Docker
+      id: meta
+      uses: docker/metadata-action@v3
+      with:
+        images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+    - name: Build Docker image
+      uses: docker/build-push-action@v2
+      with:
+        context: function
+        push: false
+        tags: ${{ steps.meta.outputs.tags }}
+        labels: ${{ steps.meta.outputs.labels }}
