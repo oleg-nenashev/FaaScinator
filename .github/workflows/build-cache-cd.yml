@@ -36,7 +36,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: function
-          file: "{context}/Dockerfile-buildcache"
+          file: "Dockerfile-buildcache"
           push: true
           tags: mvncache-latest
           labels: ${{ steps.meta.outputs.labels }}
