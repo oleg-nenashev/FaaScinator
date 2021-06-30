@@ -24,6 +24,8 @@ jobs:
   
   build-docker:
     runs-on: ubuntu-latest
+    env:
+      IMAGE_NAME: onenashev/faascinator
     steps:
     - uses: actions/checkout@v2
     - name: Set up Docker Buildx
