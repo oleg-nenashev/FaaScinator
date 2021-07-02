@@ -14,7 +14,9 @@ jobs:
     permissions:
       contents: read
       packages: write
-
+    env:
+      IMAGE_NAME: oleg-nenashev/faascinator
+      REGISTRY: ghcr.io
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
