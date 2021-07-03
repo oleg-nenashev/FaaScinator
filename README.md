@@ -93,6 +93,7 @@ Graphics, presentation slides and other materials are licensed under
 
 ## Contributing
 
-Contributor guidelines are coming soon.
-Just submit GitHub issues to share feedback.
-Any pull requests are welcome!
+Any contributions are welcome!
+There are no contributor license agreement or other obstacles in this repository.
+You can just submit a pull request or share your feedback!
+More information: [Contributing Guide](./CONTRIBUTING.md).
