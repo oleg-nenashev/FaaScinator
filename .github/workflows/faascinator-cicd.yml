@@ -53,8 +53,7 @@ jobs:
         labels: ${{ steps.meta.outputs.labels }}
         
   deploy:
-    # TODO: Fix after testing
-    #if: ${{ github.ref == 'refs/heads/main' }}
+    if: ${{ github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
     name: "Deploy FaaScinator: ${{ github.ref }}"
     needs:
