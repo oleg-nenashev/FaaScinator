@@ -1,12 +1,12 @@
 ##
 # Builder image with caching
 ##
-FROM ghcr.io/oleg-nenashev/faascinator-buidcache:buildcache as builder
+FROM ghcr.io/oleg-nenashev/faascinator-buidcache:main as builder
 
 RUN mkdir /app
 WORKDIR /app
 ADD . /app/
-RUN mvn clean package
+RUN mvn clean package -B -ntp -e
 
 ##
 # Use the openfaas image to get the watchdog - a reverse proxy with monitoring
