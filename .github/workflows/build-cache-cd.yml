@@ -2,7 +2,7 @@ name: Create and publish a Docker image
 on:
   push:
     # TODO: Remoce buildcache after merge
-    branches: ['main', 'buildcache']
+    branches: ['main']
 
 env:
   REGISTRY: ghcr.io
