@@ -54,8 +54,9 @@ jobs:
         
   deploy:
     # TODO: Fix after testing
-    if: ${{ github.ref == 'refs/heads/ci' }}
+    #if: ${{ github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
+    name: "Deploy FaaScinator: ${{ github.ref }}"
     needs:
       - build-maven
       - build-docker
