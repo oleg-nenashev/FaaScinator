@@ -54,7 +54,7 @@ jobs:
         
   deploy:
     # TODO: Fix after testing
-    if: github.ref == 'refs/heads/ci'
+    if: ${{ github.ref == 'refs/heads/ci' }}
     runs-on: ubuntu-latest
     needs:
       - build-maven
