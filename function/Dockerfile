@@ -1,7 +1,7 @@
 ##
 # Builder image with caching
 ##
-FROM onenashev/faascinator:buildcache as builder
+FROM ghcr.io/oleg-nenashev/faascinator-buidcache:buildcache as builder
 
 RUN mkdir /app
 WORKDIR /app
