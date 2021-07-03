@@ -43,3 +43,21 @@ If you work on massive updates, it might be reasonable to update cache to speedu
 1. Go to the [function](./function) directory.
 2. Run `make build-cache` to build the Docker image with Maven cache. It will take a while.
 3. Run builds with the new cache as documented above
+
+## Releasing
+
+The repository has continuous delivery enabled for the `main` branch.
+All merged changes will be automatically released.
+Docker images will have the `main` tag.
+
+To release a version, you need write permissions to the repository:
+
+1. Go to the release drafts, and select the current release draft.
+2. Define the version for the new release.
+   [Semantic Versioning 2.0.0](https://semver.org/) standard should be used.
+3. Copy-edit the changelog
+4. Publish the release
+
+Once the GitHub Release is published,
+a GitHub Action will execute the build, produce and deploy the artifacts and Docker images.
+All these artifacts will be tagged with the required release version.
