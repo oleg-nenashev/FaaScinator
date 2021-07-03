@@ -12,18 +12,21 @@ Feedback is welcome!
 
 ## Quickstart
 
-It will be quicker soon,
-just a developer mode for now.
+This demo requires Docker on your machine.
+Docker for Windows and Docker for Mac are also fine.   
 
-1. Go to the [function](./function) directory.
-2. Run `mvn clean package` to build the executables.
-   JDK 11 and Maven 3.6.3+ are required.
-   Once built, you can experiment with FaaScinator as a common Quarkus service and HTTP interface.
-3. Run `make build-cache` to build the Docker image with Maven cache. It will take a while.
-4. Run `make build` to build the OpenFaaS compatible FaaScinator image.
-   Templates are yet to be supported.
-5. Run `make run` to run the Dockerized demo.
-   It will expose the reactive service on port `8080`.
+Run the following command:
+
+```bash
+docker pull ghcr.io/oleg-nenashev/faascinator:main
+docker run --rm -p 8080:8080 ghcr.io/oleg-nenashev/faascinator:main
+```
+
+The command will start the image and expose the API server on port `8080`.
+Then you can:
+
+1. Get current time by opening http://localhost:8080
+2. Get help by opening http://localhost:8080/help
 
 ## Usage
 
@@ -57,7 +60,7 @@ docker --rm -p 8080:8080 \
    -e QUARKUS_FAASCINATOR_DESCRIPTION="Shows the current time" \
    -e QUARKUS_FAASCINATOR_CLIJAR=/app/payload.jar \
    -e QUARKUS_FAASCINATOR_MAINCLASS="io.faascinator.demo.currenttime.CurrentTime" \
-   onenashev/faascinator
+   ghcr.io/oleg-nenashev/faascinator:main
 ```
 
 ### Running in OpenFaaS
@@ -90,6 +93,7 @@ Graphics, presentation slides and other materials are licensed under
 
 ## Contributing
 
-Contributor guidelines are coming soon.
-Just submit GitHub issues to share feedback.
-Any pull requests are welcome!
+Any contributions are welcome!
+There are no contributor license agreement or other obstacles in this repository.
+You can just submit a pull request or share your feedback!
+More information: [Contributing Guide](./CONTRIBUTING.md).

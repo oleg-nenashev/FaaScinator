@@ -1,12 +1,12 @@
 ##
 # Builder image with caching
 ##
-FROM onenashev/faascinator:buildcache as builder
+FROM ghcr.io/oleg-nenashev/faascinator-buidcache:main as builder
 
 RUN mkdir /app
 WORKDIR /app
 ADD . /app/
-RUN mvn clean package
+RUN mvn clean package -B -ntp -e
 
 ##
 # Use the openfaas image to get the watchdog - a reverse proxy with monitoring
@@ -19,7 +19,7 @@ FROM openfaas/of-watchdog:0.7.6 as watchdog
 ##
 FROM adoptopenjdk:11.0.11_9-jdk-hotspot
 
-COPY --from=builder /app/3_lib/target/quarkus-app/ /function
+COPY --from=builder /app/3_service/target/quarkus-app/ /function
 ENV QUARKUS_HTTP_PORT=9090
 
 COPY --from=watchdog /fwatchdog /fwatchdog
