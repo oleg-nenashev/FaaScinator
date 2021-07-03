@@ -13,20 +13,32 @@ Feedback is welcome!
 ## Quickstart
 
 This demo requires Docker on your machine.
-Docker for Windows and Docker for Mac are also fine.   
+_Docker for Windows_ and _Docker for Mac_ will also do the job.   
+
+To get started, clone this repository to your local computer and go into itsroot directory.
+Then build the demo project:
+
+```bash
+mvn -f demo/currentTime/cli-app/ clean package
+```
 
 Run the following command:
 
 ```bash
-docker pull ghcr.io/oleg-nenashev/faascinator:main
-docker run --rm -p 8080:8080 ghcr.io/oleg-nenashev/faascinator:main
+docker run --rm -p 8080:8080 \
+	-v $(pwd)/demo/currentTime/cli-app/target/demo-current-time.jar:/app/payload.jar \
+ 	-e QUARKUS_FAASCINATOR_DESCRIPTION="Shows the current time" \
+	-e QUARKUS_FAASCINATOR_CLIJAR=/app/payload.jar \
+	-e QUARKUS_FAASCINATOR_MAINCLASS="io.faascinator.demo.currenttime.CurrentTime" \
+	ghcr.io/oleg-nenashev/faascinator:main
 ```
 
 The command will start the image and expose the API server on port `8080`.
 Then you can:
 
 1. Get current time by opening http://localhost:8080
-2. Get help by opening http://localhost:8080/help
+2. Get current time in Zurich timezone by opening http://localhost:8080/?arg=Europe/Zurich
+3. Get help by opening http://localhost:8080/help
 
 ## Usage
 
