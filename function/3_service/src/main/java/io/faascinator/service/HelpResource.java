@@ -1,5 +1,10 @@
 package io.faascinator.service;
 
+/**
+ * Prints help for the method
+ * @author Oleg Nenashev
+ * @since TODO
+ */
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import io.faascinator.service.util.PicocliExtractor;
 import picocli.CommandLine;
@@ -14,11 +19,6 @@ import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
 import java.util.Optional;
 
-/**
- * Prints help for the method
- * @author Oleg Nenashev
- * @since TODO
- */
 @Path("/help")
 public class HelpResource extends FaaScinatorResource {
 
