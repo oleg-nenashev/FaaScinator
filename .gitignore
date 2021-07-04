@@ -15,6 +15,6 @@ buildNumber.properties
 *.iml
 
 # OpenFaaS
-test/
+/test/
 template
 build
