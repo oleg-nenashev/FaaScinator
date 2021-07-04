@@ -32,7 +32,7 @@ public class MainResource extends FaaScinatorResource {
         return runSubcommand(null, args);
     }
 
-    //TODO: fix it
+        //TODO: fix it
     @SuppressFBWarnings(value = "DM_DEFAULT_ENCODING", justification = "hack")
     @GET
     @Path("/run/{subcommand}")
