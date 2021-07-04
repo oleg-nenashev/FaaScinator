@@ -1,6 +1,8 @@
 <p align="center"><img src="docs/images/repo-header.png" alt="FaaScinator"></p>
 
 [![GitHub Release](https://img.shields.io/github/release/oleg-nenashev/faascinator.svg)](https://github.com/oleg-nenashev//faascinator/releases) 
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.0-4baaaa.svg)](code_of_conduct.md)
+
 [![Follow @oleg-nenashev](https://img.shields.io/twitter/follow/oleg_nenashev.svg?style=social)](https://twitter.com/intent/follow?screen_name=oleg_nenashev) 
 
 # FaaScinator - Java CLI Apps as serverless functions (preview)
@@ -102,6 +104,11 @@ And yes, it was initially drawn on a napkin during the lunch break!
 All code is licensed under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 Graphics, presentation slides and other materials are licensed under
 [Creative Commons Attribution-ShareAlike 3.0 Unported License](https://creativecommons.org/licenses/by-sa/3.0/).
+
+## Code of Conduct
+
+This project adopted [Contributor Covenant 2.0](https://www.contributor-covenant.org/) as Code of Conduct.
+See the full version and escalation guidelines [here](./CODE_OF_CONDUCT.md).
 
 ## Contributing
 
