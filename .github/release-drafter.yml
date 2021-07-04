@@ -1,0 +1,69 @@
+# Configuration for Release Drafter: https://github.com/toolmantim/release-drafter
+# Insipered by: https://raw.githubusercontent.com/jenkinsci/.github/master/.github/release-drafter.yml
+name-template: $NEXT_PATCH_VERSION
+tag-template: $NEXT_PATCH_VERSION
+
+# Emoji reference: https://gitmoji.carloscuesta.me/
+# If adding categories, please also update: https://github.com/jenkins-infra/jenkins-maven-cd-action/blob/master/action.yaml#L16
+categories:
+  - title: 💥 Breaking changes
+    labels: 
+      - breaking
+  - title: 🚨 Removed
+    label: removed
+  - title: 🎉 Major features and improvements
+    labels:
+      - major-enhancement
+  - title: 🐛 Major bug fixes
+    labels:
+      - major-bug
+  - title: ⚠️ Deprecated
+    label: deprecated
+  - title: 🚀 New features and improvements
+    labels:
+      - enhancement
+  - title: 🐛 Bug fixes
+    labels:
+      - bug
+      - regression
+  - title: 👷 Changes for developers
+    labels:
+      - developer
+  - title: 🌐 Changes for contributors
+    label: community
+  # Default label used by Dependabot
+  - title: 📦 Dependency updates
+    label: dependencies
+  - title: 📝 Documentation updates
+    label: documentation
+  - title: 👻 Maintenance
+    labels: 
+      - chore
+  - title: 🚦 Tests
+    labels: 
+      - test
+exclude-labels:
+  - reverted
+  - skip-changelog
+  - invalid
+
+template: |
+  <!-- Optional: add a release summary here -->
+  $CHANGES
+  
+  All contributors: $CONTRIBUTORS
+
+autolabeler:
+  - label: 'documentation'
+    files:
+      - '*.md'
+    branch:
+      - '/docs{0,1}\/.+/'
+  - label: 'bug'
+    branch:
+      - '/fix\/.+/'
+    title:
+      - '/fix/i'
+  - label: 'enhancement'
+    branch:
+      - '/feature\/.+/'

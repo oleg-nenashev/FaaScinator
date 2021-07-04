@@ -1,0 +1,13 @@
+name: FaaScinator
+description: >
+  FaaScinator - Deploy Java CLI Apps as serverless functions
+metadata:
+  keywords:
+    - faascinator
+    - faas
+    - picocli
+    - openfaas
+  guide: "See the docs"
+  categories:
+    - "miscellaneous"
+  status: "preview"

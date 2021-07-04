@@ -2,6 +2,7 @@ package io.faascinator.service.util;
 
 import edu.umd.cs.findbugs.annotations.CheckForNull;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+import io.faascinator.quarkus.extension.runtime.FaaScinatorRuntimeConfig;
 import picocli.CommandLine;
 
 import java.io.File;
@@ -17,7 +18,7 @@ import java.net.URLClassLoader;
  */
 public class PicocliExtractor {
 
-    public static CommandLine extractCommandLine(FunctionConfig config) throws IOException {
+    public static CommandLine extractCommandLine(FaaScinatorRuntimeConfig config) throws IOException {
         final Class<?> clazz;
         try {
             clazz = loadClass(config.getClassName(), config.getJarFile());
@@ -30,7 +31,7 @@ public class PicocliExtractor {
 
     //TODO: Add some security guardrails
     @SuppressFBWarnings(value = "PATH_TRAVERSAL_IN", justification = "As designed in PoC")
-    private static Class<?> loadClass(String className, @CheckForNull String jar) throws ClassNotFoundException, IOException {
+    private static Class<?> loadClass(@CheckForNull String className, @CheckForNull String jar) throws ClassNotFoundException, IOException {
         ClassLoader cl = PicocliExtractor.class.getClassLoader();
         if (jar != null) {
             final File jarFile = new File(jar);
@@ -42,7 +43,7 @@ public class PicocliExtractor {
             }
             cl = new URLClassLoader(new URL[]{jarFile.toURI().toURL()}, cl);
         }
-        return Class.forName(className, true, cl);
+        return Class.forName(className != null ? className : FunctionConfig.DEFAULT_CLI_APP_CLASS, true, cl);
     }
 
 }
