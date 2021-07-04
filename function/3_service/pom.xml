@@ -62,6 +62,10 @@
       <groupId>com.github.spotbugs</groupId>
       <artifactId>spotbugs-annotations</artifactId>
     </dependency>
+    <dependency>
+      <groupId>org.asciidoctor</groupId>
+      <artifactId>asciidoctorj</artifactId>
+    </dependency>
 
     <dependency>
       <groupId>io.quarkus</groupId>
