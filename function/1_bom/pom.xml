@@ -17,6 +17,7 @@
   <properties>
     <picocli.version>4.6.1</picocli.version>
     <asciidoctor.version>2.5.1</asciidoctor.version>
+    <jruby.version>9.2.19.0</jruby.version>
   </properties>
 
   <dependencyManagement>
@@ -42,6 +43,16 @@
         <groupId>org.asciidoctor</groupId>
         <artifactId>asciidoctorj</artifactId>
         <version>${asciidoctor.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.jruby</groupId>
+        <artifactId>jruby</artifactId>
+        <version>${jruby.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.jruby</groupId>
+        <artifactId>jruby-core</artifactId>
+        <version>${jruby.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
