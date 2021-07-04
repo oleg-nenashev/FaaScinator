@@ -1,14 +1,14 @@
 package io.faascinator.service;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+import io.faascinator.quarkus.extension.runtime.AsciidoctorConfig;
 import io.faascinator.service.util.PicocliExtractor;
-import org.asciidoctor.Asciidoctor;
 import org.asciidoctor.Options;
 import org.asciidoctor.jruby.AsciiDocDirectoryWalker;
-import org.asciidoctor.jruby.internal.JRubyAsciidoctor;
 import picocli.CommandLine;
 import picocli.codegen.docgen.manpage.ManPageGenerator;
 
+import javax.inject.Inject;
 import javax.ws.rs.BadRequestException;
 import javax.ws.rs.GET;
 import javax.ws.rs.NotFoundException;
@@ -28,6 +28,9 @@ import java.nio.file.Files;
  */
 @Path("/doc")
 public class DocResource extends FaaScinatorResource {
+
+    @Inject
+    public AsciidoctorConfig asciidoctorConfig;
 
     @GET
     @Produces(MediaType.TEXT_HTML)
@@ -51,15 +54,14 @@ public class DocResource extends FaaScinatorResource {
 
     @SuppressFBWarnings(value = "PATH_TRAVERSAL_IN", justification = "Sanitized by CommandLine")
     public String generateDoc(CommandLine commandLine, boolean isSubcommand) throws IOException {
-        final Asciidoctor asciidoctor = new JRubyAsciidoctor();
         final File tmpDir = Files.createTempDirectory("faascinator-docs").toFile();
 
         ManPageGenerator.generateManPage(tmpDir, null, new boolean[2], false, commandLine.getCommandSpec());
 
         System.out.println("Converting man pages to HTML...");
-        String[] result = asciidoctor.convertDirectory(
+        String[] result = asciidoctorConfig.getAsciidoctor().convertDirectory(
                 new AsciiDocDirectoryWalker(tmpDir.getAbsolutePath()),
-                Options.builder().build());
+                asciidoctorConfig.getOptionsBuilder().build());
         if (result.length != 0) {
             throw new BadRequestException("Generated empty HTML");
         }
