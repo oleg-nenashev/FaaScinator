@@ -5,7 +5,7 @@
 name: Continuous Integration and Delivery
 on:
   push:
-    branches: [ main ]
+    branches: [ main, tests-quarkus-1.x ]
   pull_request:
     branches: [ main ]
 
