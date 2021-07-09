@@ -38,7 +38,7 @@
     <spotbugs.threshold>Medium</spotbugs.threshold>
     <spotbugs.effort>default</spotbugs.effort>
 
-    <quarkus.version>2.0.0.Final</quarkus.version>
+    <quarkus.version>2.0.1.Final</quarkus.version>
   </properties>
 
   <scm>
