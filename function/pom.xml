@@ -28,8 +28,8 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <java.level>11</java.level>
-    <java.level.test>11</java.level.test>
+    <java.level>17</java.level>
+    <java.level.test>17</java.level.test>
     <gitHubRepo>oleg-nenashev/FaaScinator</gitHubRepo>
 
     <enforcer.skip>true</enforcer.skip>
@@ -38,7 +38,7 @@
     <spotbugs.threshold>Medium</spotbugs.threshold>
     <spotbugs.effort>default</spotbugs.effort>
 
-    <quarkus.version>2.0.1.Final</quarkus.version>
+    <quarkus.version>3.8.2</quarkus.version>
   </properties>
 
   <scm>
