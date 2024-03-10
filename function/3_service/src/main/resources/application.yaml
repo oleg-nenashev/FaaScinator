@@ -2,3 +2,5 @@
 quarkus:
   faascinator:
     description: "Demonstrates usage of FaaScinator with embedded CLI app (CheckSum calculator)"
+  asciidoctor:
+    docType: manpage
