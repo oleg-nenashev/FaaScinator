@@ -1,6 +1,6 @@
 <p align="center"><img src="docs/images/repo-header.png" alt="FaaScinator"></p>
 
-[![GitHub Release](https://img.shields.io/github/release/oleg-nenashev/faascinator.svg)](https://github.com/oleg-nenashev//faascinator/releases) 
+[![GitHub Release](https://img.shields.io/github/release/oleg-nenashev/faascinator.svg)](https://github.com/oleg-nenashev//faascinator/releases)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.0-4baaaa.svg)](code_of_conduct.md)
 
 [![Follow @oleg-nenashev](https://img.shields.io/twitter/follow/oleg_nenashev.svg?style=social)](https://twitter.com/intent/follow?screen_name=oleg_nenashev) 
@@ -8,16 +8,16 @@
 # FaaScinator - Java CLI Apps as serverless functions (preview)
 
 Converts Java CLI apps into serverless [OpenFaaS](https://www.openfaas.com/) functions, 
-powered by [Quarkus](https://quarkus.io/), [picocli](https://picocli.info/), [Docker](https://www.docker.com/) and [Adoptium JDK](https://adoptium.net/).
+powered by [Quarkus](https://quarkus.io/), [picocli](https://picocli.info/), [Docker](https://www.docker.com/) and [Eclipse Temurin](https://adoptium.net/temurin/releases/).
 This project is under active development (and may not work).
 Feedback is welcome!
 
-## Quickstart
+## Quick Start
 
-This demo requires Docker on your machine.
-_Docker for Windows_ and _Docker for Mac_ will also do the job.   
+This demo requires a container engine on your machine.
+_Docker Desktop_ for Windows or MacBook should also do the job.
 
-To get started, clone this repository to your local computer and go into itsroot directory.
+To get started, clone this repository to your local computer and go into its root directory.
 Then build the demo project:
 
 ```bash
@@ -68,7 +68,7 @@ See the demo [here](./demo/currentTime).
 The Docker image needs to be built first.
 To launch the Docker Image with an arbitrary JAR, use the following command:
 
-```
+```shell
 docker --rm -p 8080:8080 \
    -v $(pwd)/demo/currentTime/cli-app/target/demo-current-time.jar:/app/payload.jar \
    -e QUARKUS_FAASCINATOR_DESCRIPTION="Shows the current time" \

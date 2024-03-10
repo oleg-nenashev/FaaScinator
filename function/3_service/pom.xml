@@ -5,10 +5,10 @@
   <parent>
     <groupId>io.faascinator</groupId>
     <artifactId>faascinator-parent</artifactId>
-    <version>1.0-alpha-1-SNAPSHOT</version>
+    <version>2.0.0-SNAPSHOT</version>
   </parent>
   <artifactId>faascinator-service</artifactId>
-  <version>1.0-alpha-1-SNAPSHOT</version>
+  <version>2.0.0-SNAPSHOT</version>
   <name>FaaScinator - Service</name>
   <description>FaaScinator Service that wraps CLI App and exposes it via REST APi endpoints</description>
   <url>https://github.com/oleg-nenashev/FaaScinator</url>
