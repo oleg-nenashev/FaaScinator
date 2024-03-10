@@ -1,7 +1,7 @@
 ##
 # Builder image
 ##
-FROM maven:3.8.1-adoptopenjdk-11
+FROM maven:3.9.6-eclipse-temurin-17
 
 RUN mkdir /app-buildcache
 WORKDIR /app-buildcache
