@@ -33,7 +33,7 @@
     <gitHubRepo>oleg-nenashev/FaaScinator</gitHubRepo>
 
     <enforcer.skip>true</enforcer.skip>
-    <spotbugs.version>4.3.0</spotbugs.version>
+    <spotbugs.version>4.8.3</spotbugs.version>
     <spotbugs.failOnError>true</spotbugs.failOnError>
     <spotbugs.threshold>Medium</spotbugs.threshold>
     <spotbugs.effort>default</spotbugs.effort>
@@ -53,7 +53,7 @@
       <plugin>
         <groupId>com.github.spotbugs</groupId>
         <artifactId>spotbugs-maven-plugin</artifactId>
-        <version>4.2.0</version>
+        <version>4.8.3.1</version>
         <configuration>
           <failOnError>${spotbugs.failOnError}</failOnError>
           <xmlOutput>true</xmlOutput>
@@ -81,7 +81,7 @@
 
       <plugin>
         <artifactId>maven-enforcer-plugin</artifactId>
-        <version>3.0.0-M3</version>
+        <version>3.4.1</version>
         <executions>
           <execution>
             <id>display-info</id>
@@ -93,8 +93,8 @@
             <configuration>
               <rules>
                 <requireMavenVersion>
-                  <version>[3.6.3,)</version>
-                  <message>3.6.3 is required at least.</message>
+                  <version>[3.6.9,)</version>
+                  <message>3.6.9 is required at least.</message>
                 </requireMavenVersion>
                 <requirePluginVersions>
                   <banSnapshots>true</banSnapshots>
@@ -149,7 +149,7 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>animal-sniffer-maven-plugin</artifactId>
-        <version>1.20</version>
+        <version>1.23</version>
         <executions>
           <execution>
             <goals>
@@ -162,7 +162,7 @@
 
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.8.1</version>
+        <version>3.12.1</version>
         <configuration>
           <source>${java.level}</source>
           <target>${java.level}</target>
@@ -191,7 +191,7 @@
           <plugin>
             <groupId>org.jacoco</groupId>
             <artifactId>jacoco-maven-plugin</artifactId>
-            <version>0.8.7</version>
+            <version>0.8.11</version>
             <executions>
               <execution>
                 <goals>
