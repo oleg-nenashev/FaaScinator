@@ -16,11 +16,11 @@
     <maven-surefire-plugin.version>3.2.5</maven-surefire-plugin.version>
     <failsafe-plugin.version>${maven-surefire-plugin.version}</failsafe-plugin.version>
     <maven.compiler.parameters>true</maven.compiler.parameters>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <quarkus.version>1.13.7.Final</quarkus.version>
+    <quarkus.version>3.8.2</quarkus.version>
   </properties>
   <dependencyManagement>
     <dependencies>
