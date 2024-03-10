@@ -12,12 +12,12 @@ RUN mvn clean package -B -ntp -e
 # Use the openfaas image to get the watchdog - a reverse proxy with monitoring
 # https://github.com/openfaas/of-watchdog
 ##
-FROM openfaas/of-watchdog:0.7.6 as watchdog
+FROM ghcr.io/openfaas/of-watchdog:0.9.11 as watchdog
 
 ##
 # Create new image
 ##
-FROM adoptopenjdk:11.0.11_9-jdk-hotspot
+FROM eclipse-temurin:17.0.10_7-jdk
 
 COPY --from=builder /app/3_service/target/quarkus-app/ /function
 ENV QUARKUS_HTTP_PORT=9090
