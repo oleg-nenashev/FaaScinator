@@ -3,13 +3,11 @@
 [![GitHub Release](https://img.shields.io/github/release/oleg-nenashev/faascinator.svg)](https://github.com/oleg-nenashev//faascinator/releases)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.0-4baaaa.svg)](code_of_conduct.md)
 
-[![Follow @oleg-nenashev](https://img.shields.io/twitter/follow/oleg_nenashev.svg?style=social)](https://twitter.com/intent/follow?screen_name=oleg_nenashev) 
-
 # FaaScinator - Java CLI Apps as serverless functions (preview)
 
-Converts Java CLI apps into serverless [OpenFaaS](https://www.openfaas.com/) functions, 
+Converts Java CLI apps into serverless [OpenFaaS](https://www.openfaas.com/) functions,
 powered by [Quarkus](https://quarkus.io/), [picocli](https://picocli.info/), [Docker](https://www.docker.com/) and [Eclipse Temurin](https://adoptium.net/temurin/releases/).
-This project is under active development (and may not work).
+This is a pet project under not=so active development, and it may or may not work.
 Feedback is welcome!
 
 ## Quick Start
@@ -38,9 +36,9 @@ docker run --rm -p 8080:8080 \
 The command will start the image and expose the API server on port `8080`.
 Then you can:
 
-1. Get current time by opening http://localhost:8080
-2. Get current time in Zurich timezone by opening http://localhost:8080/?arg=Europe/Zurich
-3. Get help by opening http://localhost:8080/help
+1. Get current time by opening `http://localhost:8080`
+2. Get current time in Zurich timezone by opening `http://localhost:8080/?arg=Europe/Zurich`
+3. Get help by opening `http://localhost:8080/help`
 
 ## Usage
 
@@ -61,7 +59,7 @@ java \
      Europe/Zurich
 ```
 
-See the demo [here](./demo/currentTime).
+See the demo [here](./demo/currentTime/README.md).
 
 ### Running in Docker
 
@@ -97,7 +95,7 @@ This is how the FaaScinator design looks like.
 And yes, it was initially drawn on a napkin during the lunch break!
 [Proof in Twitter](https://twitter.com/oleg_nenashev/status/1408776830363082758).
 
-![FaaScinator design](/docs/images/faascinator-design.png)
+![FaaScinator design](./docs/images/faascinator-design.png)
 
 ## License
 
