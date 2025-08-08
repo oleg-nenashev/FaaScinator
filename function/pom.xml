@@ -39,7 +39,7 @@
     <spotbugs.effort>default</spotbugs.effort>
     <maven-surefire-plugin.version>3.2.5</maven-surefire-plugin.version>
 
-    <quarkus.version>3.8.2</quarkus.version>
+    <quarkus.version>3.14.2</quarkus.version>
   </properties>
 
   <scm>
