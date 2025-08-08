@@ -3,9 +3,11 @@ package io.faascinator.quarkus.extension.runtime;
 import io.quarkus.runtime.annotations.ConfigItem;
 import io.quarkus.runtime.annotations.ConfigPhase;
 import io.quarkus.runtime.annotations.ConfigRoot;
+import io.smallrye.config.ConfigMapping;
+import io.smallrye.config.WithDefault;
 
-@ConfigRoot(phase = ConfigPhase.RUN_TIME, name = "faascinator")
-public class FaaScinatorRuntimeConfig {
+@ConfigMapping(prefix = "faascinator")
+public interface FaaScinatorRuntimeConfig {
 
     public static final String DEFAULT_STRING_VALUE_NULL = "!";
 
@@ -13,45 +15,38 @@ public class FaaScinatorRuntimeConfig {
      * If Swagger UI is included, it should be enabled/disabled. By default, Swagger UI is enabled if it is included (see
      * {@code always-include}).
      */
-    @ConfigItem(defaultValue = "true")
-    boolean enable;
+    @WithDefault("true")
+    boolean enable();
 
     /**
-     * Name of the class which contains the entry point.
+     * Name of the class that contains the entry point.
      */
-    @ConfigItem(name = "mainClass", defaultValue = DEFAULT_STRING_VALUE_NULL)
-    public String mainClass;
+    @WithDefault(DEFAULT_STRING_VALUE_NULL)
+    public String mainClass();
 
     /**
      * Name of the JAR file to be loaded.
      */
-    @ConfigItem(name = "cliJar", defaultValue = DEFAULT_STRING_VALUE_NULL)
-    public String jarFile;
+    @WithDefault(DEFAULT_STRING_VALUE_NULL)
+    public String jarFile();
 
     /**
      * Describes the function.
      */
-    public String description = "CLI Endpoint to be triggered";
+    @WithDefault("CLI Endpoint to be triggered")
+    public String description();
 
     // TODO: Add support for environment variables
     // TODO: Add support for system properties
 
-    public FaaScinatorRuntimeConfig() {
-        // To be used by mapping
-    }
-
-    public FaaScinatorRuntimeConfig(String mainClass, String jarFile) {
-        this.mainClass = mainClass;
-        this.jarFile = jarFile;
-    }
 
     /**
      * Gets name of the parameterized class to be used.
      * @return  Main class to be invoked.
      *          {@code null} if the value is undefined.
      */
-    public String getClassName() {
-        return DEFAULT_STRING_VALUE_NULL.equals(mainClass) ? null : mainClass;
+    default public String getClassName() {
+        return DEFAULT_STRING_VALUE_NULL.equals(mainClass()) ? null : mainClass();
     }
 
     /**
@@ -60,8 +55,8 @@ public class FaaScinatorRuntimeConfig {
      * @return  Path to the JAR file containing CLI.
      *          {@code null} if the value is undefined.
      */
-    public String getJarFile() {
-        return DEFAULT_STRING_VALUE_NULL.equals(jarFile) ? null : jarFile;
+    default public String getJarFile() {
+        return DEFAULT_STRING_VALUE_NULL.equals(jarFile()) ? null : jarFile();
     }
 
 }

@@ -29,10 +29,10 @@ public class HelpResource extends FaaScinatorResource {
     public String printHelp() throws IOException {
         StringBuilder response = new StringBuilder();
 
-        response.append(config.description);
+        response.append(config.description());
         response.append("\n\n");
         response.append("CLI application main class: ");
-        response.append(config.mainClass);
+        response.append(config.mainClass());
         response.append("\n");
         response.append("CLI JAR file: ");
         response.append(Optional.ofNullable(config.getJarFile()).orElse("<embedded>"));
