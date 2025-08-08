@@ -15,7 +15,7 @@ public class HelpResourceTest {
             .when().get("/help")
             .then()
             .statusCode(200)
-            .body(containsString("Demonstrates usage of FaaScinator with embedded CLI app (CheckSum calculator)"));
+            .body(containsString("Demonstrates usage of FaaScinator with embedded CLI App JAR (CheckSum calculator)"));
     }
 
 }

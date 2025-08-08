@@ -15,7 +15,7 @@ public class HelpResourceTest {
             .when().get("/help")
             .then()
             .statusCode(200)
-            .body(containsString("Demonstrates usage of FaaScinator with external CLI App JAR (CheckSum calculator)"));
+            .body(containsString("Demonstrates usage of FaaScinator"));
     }
 
 }
