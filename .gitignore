@@ -19,3 +19,7 @@ function/.idea
 /test/
 template
 build
+
+# MkDocs
+site/
+.cache/
